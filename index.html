@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Stock Prediction App</title>
+</head>
+<body>
+   <h1>Stock Prediction App</h1>
+   <form method="post" action="/">
+    <h2>enter the Ticker</h2>
+       <label for="ticker">Stock Ticker:</label>
+       <input type="text" name="ticker" required>
+       <label for="start_date">Start Date:</label>
+       <input type="text" name="start_date" placeholder="YYYY-MM-DD" required>
+       <label for="end_date">End Date:</label>
+       <input type="text" name="end_date" placeholder="YYYY-MM-DD" required>
+       <button type="submit">Predict</button>
+   </form>
+   {% if predicted_price %}
+       <p>Last Date: {{ last_date }}</p>
+       <p>Predicted Price: {{ predicted_price }}</p>
+       <p>Stock Ticker: {{ ticker }}</p>
+       <!--<p>Average Cross-validation score: {{ avg_cv_score }}</p>-->
+
+
+   {% endif %}
+</body>
+</html>
